@@ -1,0 +1,5 @@
+aws_region            = "us-east-1"
+profile               = "default"
+api_name              = "self_service_api_terraform"
+api_stage_name        = "test"
+lambda_function_name  = "SampleLambda"
