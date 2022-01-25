@@ -263,6 +263,13 @@ resource "aws_lambda_function" "testreport" {
   role          = aws_iam_role.iam_role_for_lambda.arn
   handler       = "LambdaFunctionOverHttps.handler"
   runtime       = "python3.9"
+  layers = [aws_lambda_layer_version.lambda_layer.arn]
+}
+
+resource "aws_lambda_layer_version" "lambda_layer" {
+  filename   = "layer.zip"
+  layer_name = "lambda_layer_name"
+  compatible_runtimes = ["python3.8","python3.9"]
 }
 
 resource "aws_iam_role" "iam_role_for_lambda" {
