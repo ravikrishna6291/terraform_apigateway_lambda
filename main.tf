@@ -266,7 +266,7 @@ resource "aws_lambda_function" "testreport" {
 }
 
 resource "aws_iam_role" "iam_role_for_lambda" {
-name = "iam_role_for_lambda"
+name = "iam_role_for_lambda_terraform"
 assume_role_policy = <<EOF
 {
 "Version": "2012-10-17",
